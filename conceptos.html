@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -18,46 +17,109 @@
     <style>
 
         body {
-            background-color: #0f0f0f;
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .navbar,
         .footer {
-            background-color: #111 !important;
+            background: rgba(0,0,0,0.9) !important;
+            backdrop-filter: blur(10px);
         }
 
-        .btn-primary {
-            background-color: #ff6a00 !important;
-            border-color: #ff6a00 !important;
+        .navbar-brand {
+            color: #ff7300 !important;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        .btn-primary:hover {
-            background-color: #e65c00 !important;
-            border-color: #e65c00 !important;
+        .hero {
+            min-height: 90vh;
+            background:
+            linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+            url('assets/img/cor.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        h1, h2, h4 {
-            color: #ff6a00 !important;
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ff7300;
+            text-shadow: 0 0 20px rgba(255,115,0,.5);
         }
 
-        .text-white-50 {
-            color: #c7c7c7 !important;
+        .hero p {
+            color: #d0d0d0;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
         }
 
-        .bg-black {
-            background-color: #0b0b0b !important;
+        .section-title {
+            color: #ff7300;
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            font-weight: bold;
         }
 
-        .concept-box {
+        .concept-card {
+            background: linear-gradient(145deg, #111, #1b1b1b);
             border: 1px solid #222;
-            border-radius: 10px;
-            padding: 25px;
-            transition: 0.3s;
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+            transition: .4s;
+            position: relative;
+            overflow: hidden;
         }
 
-        .concept-box:hover {
-            transform: scale(1.03);
-            border-color: #ff6a00;
+        .concept-card::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            background: #ff7300;
+            top: 0;
+            left: -100%;
+            transition: .4s;
+        }
+
+        .concept-card:hover::before {
+            left: 0;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-10px);
+            border-color: #ff7300;
+            box-shadow: 0 0 25px rgba(255,115,0,.3);
+        }
+
+        .icon-box {
+            font-size: 40px;
+            color: #ff7300;
+            margin-bottom: 20px;
+        }
+
+        .concept-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .concept-card p {
+            color: #c7c7c7;
+            line-height: 1.7;
+        }
+
+        .footer {
+            border-top: 1px solid #222;
         }
 
     </style>
@@ -67,41 +129,33 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
 
-        <div class="container px-4 px-lg-5">
+        <div class="container">
 
             <a class="navbar-brand" href="index.html">
-                Inicio
+                <i class="fa-solid fa-code"></i> PROGRAMACIÓN
             </a>
 
         </div>
 
     </nav>
 
-    <!-- ENCABEZADO -->
-    <header style="
-        min-height: 70vh;
-        background:
-        linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
-        url('assets/img/cor.png');
-        background-size: cover;
-        background-position: center;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-    ">
+    <!-- HERO -->
+    <header class="hero">
 
         <div class="container">
 
-            <h1 class="text-uppercase text-white">
+            <h1>
                 Conceptos de Programación
             </h1>
 
-            <h2 class="text-white-50 mt-4">
-                Temas importantes que he aprendido en programación.
-            </h2>
+            <p class="mt-4">
+
+                Una colección de temas importantes que he aprendido
+                durante mi proceso en el mundo del desarrollo y la programación.
+
+            </p>
 
         </div>
 
@@ -110,25 +164,27 @@
     <!-- CONCEPTOS -->
     <section class="container py-5">
 
+        <h2 class="section-title">
+            Temas Aprendidos
+        </h2>
+
         <div class="row g-4">
 
             <!-- FOR -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        Ciclo For
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-rotate"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>Ciclo For</h4>
 
-                        El ciclo for se usa para repetir instrucciones
-                        varias veces automáticamente.
-
-                        Es muy útil cuando queremos contar números,
-                        recorrer listas o repetir procesos.
-
+                    <p>
+                        El ciclo for permite repetir instrucciones automáticamente.
+                        Es muy útil para contar números, recorrer listas
+                        y automatizar procesos.
                     </p>
 
                 </div>
@@ -136,20 +192,19 @@
             </div>
 
             <!-- FUNCIONES -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        Funciones
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>Funciones</h4>
 
-                        Las funciones son bloques de código que realizan
-                        una tarea específica y ayudan a organizar mejor
-                        un programa.
-
+                    <p>
+                        Las funciones ayudan a organizar el código y reutilizar
+                        tareas específicas dentro de un programa.
                     </p>
 
                 </div>
@@ -157,20 +212,19 @@
             </div>
 
             <!-- GIT -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        Git
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>Git</h4>
 
-                        Git es un sistema de control de versiones que
-                        permite guardar cambios realizados en proyectos
-                        y trabajar de manera organizada.
-
+                    <p>
+                        Git es un sistema de control de versiones utilizado
+                        para guardar cambios y trabajar de forma organizada.
                     </p>
 
                 </div>
@@ -178,20 +232,19 @@
             </div>
 
             <!-- GITHUB -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        GitHub
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>GitHub</h4>
 
-                        GitHub es una plataforma donde se almacenan proyectos
-                        de programación usando Git. También permite compartir
-                        código y trabajar en equipo.
-
+                    <p>
+                        GitHub permite almacenar proyectos online,
+                        compartir código y colaborar con otros desarrolladores.
                     </p>
 
                 </div>
@@ -199,21 +252,19 @@
             </div>
 
             <!-- LENGUAJES -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        Lenguajes de Programación
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>Lenguajes</h4>
 
-                        Los lenguajes de programación permiten crear programas,
-                        páginas web, videojuegos y aplicaciones.
-
-                        Algunos ejemplos son HTML, JavaScript y Python.
-
+                    <p>
+                        Los lenguajes de programación sirven para crear
+                        páginas web, videojuegos, aplicaciones y software.
                     </p>
 
                 </div>
@@ -221,19 +272,19 @@
             </div>
 
             <!-- parseInt -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        parseInt()
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-hashtag"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>parseInt()</h4>
 
-                        Convierte un texto o número decimal
-                        en un número entero.
-
+                    <p>
+                        Convierte texto o números decimales
+                        en números enteros.
                     </p>
 
                 </div>
@@ -241,18 +292,19 @@
             </div>
 
             <!-- parseFloat -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        parseFloat()
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>parseFloat()</h4>
 
-                        Convierte un texto en un número decimal.
-
+                    <p>
+                        Convierte texto en números decimales
+                        de manera sencilla.
                     </p>
 
                 </div>
@@ -260,19 +312,19 @@
             </div>
 
             <!-- SWITCH -->
-            <div class="col-md-6">
+            <div class="col-md-6 col-lg-4">
 
-                <div class="bg-black concept-box h-100">
+                <div class="concept-card">
 
-                    <h4 class="text-white">
-                        Switch Case
-                    </h4>
+                    <div class="icon-box">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
 
-                    <p class="text-white-50">
+                    <h4>Switch Case</h4>
 
-                        Permite elegir diferentes opciones
+                    <p>
+                        Permite ejecutar diferentes opciones
                         dependiendo del valor de una variable.
-
                     </p>
 
                 </div>
@@ -284,10 +336,14 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer bg-black small text-center text-white-50 py-4">
+    <footer class="footer text-center text-white-50 py-4">
 
         <div class="container">
-            Copyright &copy; SOBRINO 2026
+
+            <p class="mb-0">
+                © SOBRINO 2026 | Diseño Moderno de Programación
+            </p>
+
         </div>
 
     </footer>
@@ -295,4 +351,3 @@
 </body>
 
 </html>
-```

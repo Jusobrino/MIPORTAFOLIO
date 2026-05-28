@@ -6,83 +6,238 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Sobrinoss - Mecánica Automotriz</title>
+    <title>Sobrinos| Mecánica Automotriz</title>
 
     <meta name="description"
-        content="Taller de mecánica automotriz especializado en mantenimiento y reparación de vehículos." />
+        content="Página personal sobre mecánica automotriz y programación." />
 
-    <!-- Icono -->
+    <!-- ICONO -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- FONT AWESOME -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+        crossorigin="anonymous"></script>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900"
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round"
         rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900"
+        rel="stylesheet" />
+
+    <!-- BOOTSTRAP -->
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- ESTILOS SOLO COLORES -->
     <style>
-        body {
-            background-color: #0f0f0f;
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .navbar,
-        .footer {
-            background-color: #111 !important;
+        body{
+            background:#090909;
+            font-family:'Nunito', sans-serif;
+            color:white;
+            overflow-x:hidden;
         }
 
-        .masthead {
-            filter: contrast(1.1) brightness(0.9);
+        /* NAVBAR */
+
+        .navbar{
+            background:rgba(0,0,0,.85)!important;
+            backdrop-filter:blur(10px);
+            padding:15px 0;
+            border-bottom:1px solid #222;
         }
 
-        .btn-primary {
-            background-color: #ff6a00 !important;
-            border-color: #ff6a00 !important;
+        .navbar-brand{
+            color:#ff6a00!important;
+            font-weight:bold;
+            font-size:1.4rem;
+            letter-spacing:2px;
         }
 
-        .btn-primary:hover {
-            background-color: #e65c00 !important;
-            border-color: #e65c00 !important;
+        .nav-link{
+            color:white!important;
+            margin-left:15px;
+            transition:.3s;
         }
 
-        h1, h2, h4 {
-            color: #ff6a00 !important;
+        .nav-link:hover{
+            color:#ff6a00!important;
         }
 
-        .text-white-50 {
-            color: #c7c7c7 !important;
+        /* HERO */
+
+        .hero{
+            min-height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+            url('assets/img/cor.png');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
         }
 
-        .bg-light {
-            background-color: #1a1a1a !important;
+        .hero h1{
+            font-size:5rem;
+            font-weight:800;
+            color:#ff6a00;
+            text-shadow:0 0 25px rgba(255,106,0,.5);
         }
 
-        .bg-black {
-            background-color: #0b0b0b !important;
+        .hero p{
+            color:#d5d5d5;
+            font-size:1.2rem;
+            max-width:700px;
+            margin:auto;
+            line-height:1.8;
         }
 
-        .about-section {
-            background-color: #121212;
+        .btn-custom{
+            background:#ff6a00;
+            color:white;
+            padding:14px 35px;
+            border-radius:50px;
+            text-decoration:none;
+            font-weight:bold;
+            transition:.3s;
+            display:inline-block;
+            margin-top:25px;
         }
 
-        .signup-section {
-            background: linear-gradient(90deg, #111, #1a1a1a);
+        .btn-custom:hover{
+            background:#ff8c33;
+            transform:translateY(-3px);
+            color:white;
         }
 
-        a {
-            color: #ff6a00;
+        /* SECCIONES */
+
+        .section{
+            padding:100px 0;
         }
 
-        a:hover {
-            color: #ff8c33;
+        .section-title{
+            text-align:center;
+            color:#ff6a00;
+            font-size:3rem;
+            font-weight:bold;
+            margin-bottom:60px;
         }
+
+        /* CARDS */
+
+        .info-card{
+            background:linear-gradient(145deg,#121212,#1b1b1b);
+            border:1px solid #222;
+            border-radius:20px;
+            padding:35px;
+            transition:.4s;
+            height:100%;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .info-card::before{
+            content:"";
+            position:absolute;
+            width:100%;
+            height:5px;
+            background:#ff6a00;
+            top:0;
+            left:-100%;
+            transition:.4s;
+        }
+
+        .info-card:hover::before{
+            left:0;
+        }
+
+        .info-card:hover{
+            transform:translateY(-10px);
+            border-color:#ff6a00;
+            box-shadow:0 0 25px rgba(255,106,0,.25);
+        }
+
+        .info-card i{
+            font-size:45px;
+            color:#ff6a00;
+            margin-bottom:20px;
+        }
+
+        .info-card h3{
+            margin-bottom:15px;
+            font-weight:bold;
+        }
+
+        .info-card p{
+            color:#c9c9c9;
+            line-height:1.8;
+        }
+
+        /* SOBRE MI */
+
+        .about-box{
+            background:#111;
+            border-radius:25px;
+            padding:50px;
+            border:1px solid #222;
+        }
+
+        .about-box p{
+            color:#d1d1d1;
+            line-height:2;
+            font-size:1.1rem;
+        }
+
+        /* CONTACTO */
+
+        .contact-section{
+            background:
+            linear-gradient(90deg,#111,#1a1a1a);
+        }
+
+        .form-control{
+            background:#111!important;
+            border:1px solid #333!important;
+            color:white!important;
+            padding:15px;
+        }
+
+        .form-control::placeholder{
+            color:#999;
+        }
+
+        .btn-send{
+            background:#ff6a00;
+            border:none;
+            color:white;
+            padding:15px 30px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .btn-send:hover{
+            background:#ff8c33;
+        }
+
+        /* FOOTER */
+
+        footer{
+            background:#050505;
+            border-top:1px solid #222;
+            padding:30px 0;
+            color:#999;
+        }
+
     </style>
 
 </head>
@@ -90,12 +245,14 @@
 <body id="page-top">
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 
-        <div class="container px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
-            <a class="navbar-brand" href="#page-top">
-                
+        <div class="container">
+
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-car"></i>
+                SOBRINOSS
             </a>
 
             <button class="navbar-toggler"
@@ -103,7 +260,6 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive">
 
-                Menú
                 <i class="fas fa-bars"></i>
 
             </button>
@@ -119,26 +275,29 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicios">
-                            Servicios
+                        <a class="nav-link" href="#programacion">
+                            Programación
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">
-                            Contacto
+                        <a class="nav-link" href="#sobremi">
+                            Sobre Mí
                         </a>
                     </li>
+
                     <li class="nav-item">
-    <a class="nav-link" href="taller.html">
-        Mi Sueño
-    </a>
-</li>
+                        <a class="nav-link" href="taller.html">
+                            Mi Sueño
+                        </a>
+                    </li>
+
                     <li class="nav-item">
-    <a class="nav-link" href="conceptos.html">
-        Conceptos de programacion
-    </a>
-</li>
+                        <a class="nav-link" href="conceptos.html">
+                            Conceptos
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -147,100 +306,133 @@
 
     </nav>
 
-    <!-- ENCABEZADO -->
-<header class="masthead"
-    style="
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url('assets/img/cor.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-">
+    <!-- HERO -->
 
-        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+    <header class="hero">
 
-            <div class="text-center">
+        <div class="container">
 
-                <h1 class="mx-auto my-0 text-uppercase text-white">
-                     Juan David Sobrino
-                </h1>
+            <h1>
+                JUAN DAVID SOBRINO
+            </h1>
 
-                <h2 class="text-white-50 mx-auto mt-3 mb-5">
+            <p class="mt-4">
 
-                   Mecanica Automotriz
+                Apasionado por la mecánica automotriz,
+                la tecnología y el aprendizaje constante.
+                Mi objetivo es convertirme en un gran profesional
+                y seguir creciendo cada día.
 
-                </h2>
+            </p>
 
-                <a class="btn btn-primary" href="#nosotros">
-                    Conocer más
-                </a>
-
-            </div>
+            <a href="#nosotros" class="btn-custom">
+                Explorar
+            </a>
 
         </div>
 
     </header>
-    
 
     <!-- NOSOTROS -->
-    <section class="about-section text-center" id="nosotros">
 
-        <div class="container px-4 px-lg-5">
+    <section class="section" id="nosotros">
 
-            <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="container">
 
-                <div class="col-lg-8">
+            <h2 class="section-title">
+                Nosotros
+            </h2>
 
-                    <h2 class="text-white mb-4">
-                        PROGRAMACION
-                    </h2>
+            <div class="row g-4">
 
-                    <p class="text-white-50">
+                <div class="col-md-4">
 
-                        La Programación es el proceso de crear instrucciones que una computadora puede entender y ejecutar para realizar tareas específicas.
+                    <div class="info-card">
 
-                        En otras palabras, es “escribir órdenes” usando un lenguaje de programación para que una máquina pueda resolver problemas o hacer funciones automáticas.
+                        <i class="fa-solid fa-car-side"></i>
 
-                    </p>
+                        <h3>Mecánica</h3>
+
+                        <p>
+
+                            La mecánica automotriz me inspira porque
+                            permite conocer cómo funcionan los vehículos
+                            y aprender a repararlos profesionalmente.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="info-card">
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                        <h3>Programación</h3>
+
+                        <p>
+
+                            La programación ayuda a crear soluciones,
+                            automatizar tareas y desarrollar proyectos
+                            innovadores usando tecnología.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="info-card">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                        <h3>Metas</h3>
+
+                        <p>
+
+                            Mi meta es terminar mis estudios,
+                            mejorar mis habilidades y trabajar
+                            en lo que realmente me apasiona.
+
+                        </p>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <img class="img-fluid"
-                src="assets/img/ipad.png"
-                alt="Servicio automotriz" />
-
         </div>
 
     </section>
-    
 
+    <!-- PROGRAMACION -->
 
-    <!-- PROFESORA -->
-<section class="about-section text-center" id="profesora">
+    <section class="section bg-dark" id="programacion">
 
-    <div class="container px-4 px-lg-5">
+        <div class="container">
 
-        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <h2 class="section-title">
+                La Programación
+            </h2>
 
-            <div class="col-lg-8">
+            <div class="about-box text-center">
 
-                <h2 class="text-white mb-4">
-                    MI PROFESORA
-                </h2>
+                <p>
 
-                <p class="text-white-50">
+                    La programación es el proceso de crear instrucciones
+                    para que una computadora pueda realizar tareas específicas.
 
-                     Mi profesora es muy inteligente y hermosa.
-    Me gusta su forma de enseñar porque explica los temas de manera fácil
-    y siempre tiene paciencia para ayudarme a mi y a mis demas compañeros.
+                    Gracias a ella se pueden desarrollar páginas web,
+                    aplicaciones, videojuegos y sistemas inteligentes.
 
-    Gracias a sus enseñanzas he aprendido mucho y cada día tengo más ganas
-    de seguir mejorando. Es una persona amable, responsable y un gran ejemplo
-    para sus alumnos.
+                    Aprender programación también ayuda a desarrollar
+                    lógica, creatividad y resolución de problemas.
 
                 </p>
 
@@ -248,97 +440,97 @@
 
         </div>
 
-        
+    </section>
 
-    </div>
+    <!-- SOBRE MI -->
 
-</section>
+    <section class="section" id="sobremi">
 
+        <div class="container">
 
+            <h2 class="section-title">
+                Sobre Mí
+            </h2>
 
-<!-- ENCABEZADO -->
-<header class="masthead"
-    style="
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-    url('assets/img/cor.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-">
+            <div class="about-box text-center">
 
-        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-
-            <div class="text-center">
-
-                <h1 class="mx-auto my-0 text-uppercase text-white">
-                     Sobre mi
-                </h1>
-
-                <h2 class="text-white-50 mx-auto mt-3 mb-5">
+                <p>
 
                     Hola, mi nombre es Juan David Sobrino.
-                    Me gusta la mecánica automotriz y uno de mis sueños
-                    es estudiar esta carrera para convertirme en un gran profesional.
+                    Me gusta la mecánica automotriz y la tecnología.
+                    Disfruto aprender cosas nuevas y mejorar cada día.
 
-                    Tengo buenos reflejos, aprendo rápido y me gusta
-                    conocer más sobre vehículos, motores y tecnología.
-                    También disfruto jugar videojuegos y comer muchas comidas,
-                    son algunas de mis actividades favoritas.
+                    También me gustan los videojuegos,
+                    los motores y todo lo relacionado con vehículos.
+                    Uno de mis sueños es convertirme en un gran profesional
+                    y trabajar en algo que realmente me apasiona.
 
-                    Entre mis metas está mejorar cada día mis habilidades,
-                    terminar mis estudios y trabajar en lo que realmente me apasiona.
-
-                </h2>
-
-                
-                </a>
+                </p>
 
             </div>
 
         </div>
 
-    </header>
-    
-
-
-   
-
-          
+    </section>
 
     <!-- CONTACTO -->
-    <section class="signup-section" id="contacto">
 
-        <div class="container px-4 px-lg-5">
+    <section class="section contact-section" id="contacto">
 
-            <div class="row gx-4 gx-lg-5">
+        <div class="container">
 
-                <div class="col-md-10 col-lg-8 mx-auto text-center">
+            <div class="text-center mb-5">
 
-                    <i class="fas fa-car fa-2x mb-2 text-white"></i>
+                <i class="fas fa-envelope fa-3x text-white mb-4"></i>
 
-                    <h2 class="text-white mb-5">
-                        Contáctanos para más información
-                    </h2>
+                <h2 class="section-title">
+                    Contacto
+                </h2>
 
-                    <form class="form-signup">
+                <p class="text-white-50">
 
-                        <div class="row input-group-newsletter">
+                    Contáctame para más información.
 
-                            <div class="col">
+                </p>
 
-                                <input class="form-control"
-                                    type="email"
-                                    placeholder="Ingresa tu correo electrónico..."
-                                    aria-label="correo electrónico" />
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-8">
+
+                    <form>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <input type="text"
+                                    class="form-control"
+                                    placeholder="Tu nombre">
 
                             </div>
 
-                            <div class="col-auto">
+                            <div class="col-md-6">
 
-                                <button class="btn btn-primary" type="submit">
-                                    Enviar
+                                <input type="email"
+                                    class="form-control"
+                                    placeholder="Tu correo">
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <textarea class="form-control"
+                                    rows="5"
+                                    placeholder="Escribe tu mensaje"></textarea>
+
+                            </div>
+
+                            <div class="col-12 text-center">
+
+                                <button class="btn-send">
+                                    Enviar Mensaje
                                 </button>
 
                             </div>
@@ -356,19 +548,20 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer bg-black small text-center text-white-50">
 
-        <div class="container px-4 px-lg-5">
-            Copyright &copy; SOBRINO 2026
+    <footer class="text-center">
+
+        <div class="container">
+
+            © SOBRINO 2026 | Página Personal y Profesional
+
         </div>
 
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTRAP JS -->
 
-    <!-- JS Personalizado -->
-    <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
