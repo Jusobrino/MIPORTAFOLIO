@@ -8,118 +8,279 @@
 
     <title>Conceptos de Programación</title>
 
+    <meta name="description"
+        content="Conceptos importantes de programación y tecnologías aprendidas.">
+
     <!-- Bootstrap -->
     <link href="css/styles.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+        crossorigin="anonymous"></script>
 
     <style>
 
-        body {
-            background: #0a0a0a;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
+        html{
+            scroll-behavior:smooth;
         }
 
-        .navbar,
-        .footer {
-            background: rgba(0,0,0,0.9) !important;
-            backdrop-filter: blur(10px);
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .navbar-brand {
-            color: #ff7300 !important;
-            font-weight: bold;
-            letter-spacing: 1px;
+        body{
+            background:#080808;
+            color:white;
+            font-family:Arial, Helvetica, sans-serif;
+            overflow-x:hidden;
         }
 
-        .hero {
-            min-height: 90vh;
+        /* NAVBAR */
+
+        .navbar{
+            background:rgba(0,0,0,.90)!important;
+            backdrop-filter:blur(10px);
+            border-bottom:1px solid #222;
+            padding:15px 0;
+        }
+
+        .navbar-brand{
+            color:#ff6a00!important;
+            font-weight:bold;
+            letter-spacing:2px;
+            font-size:1.3rem;
+        }
+
+        /* HERO */
+
+        .hero{
+
+            min-height:100vh;
+
             background:
             linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
             url('assets/img/cor.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            color: #ff7300;
-            text-shadow: 0 0 20px rgba(255,115,0,.5);
+        .hero h1{
+            font-size:4.5rem;
+            color:#ff6a00;
+            font-weight:800;
+
+            animation:entrada 1.5s ease;
         }
 
-        .hero p {
-            color: #d0d0d0;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: auto;
+        .hero p{
+            color:#d0d0d0;
+            max-width:750px;
+            margin:auto;
+            line-height:2;
+            font-size:1.2rem;
         }
 
-        .section-title {
-            color: #ff7300;
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-            font-weight: bold;
+        @keyframes entrada{
+
+            from{
+                opacity:0;
+                transform:translateY(40px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
         }
 
-        .concept-card {
-            background: linear-gradient(145deg, #111, #1b1b1b);
-            border: 1px solid #222;
-            border-radius: 18px;
-            padding: 30px;
-            height: 100%;
-            transition: .4s;
-            position: relative;
-            overflow: hidden;
+        /* BOTON */
+
+        .btn-custom{
+
+            background:#ff6a00;
+            color:white;
+            padding:15px 35px;
+            border-radius:50px;
+            text-decoration:none;
+            display:inline-block;
+            margin-top:30px;
+            transition:.3s;
+            font-weight:bold;
+
         }
 
-        .concept-card::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 5px;
-            background: #ff7300;
-            top: 0;
-            left: -100%;
-            transition: .4s;
+        .btn-custom:hover{
+
+            background:#ff8c33;
+            transform:translateY(-3px);
+            color:white;
+
         }
 
-        .concept-card:hover::before {
-            left: 0;
+        /* TITULOS */
+
+        .section-title{
+
+            text-align:center;
+            color:#ff6a00;
+            font-size:3rem;
+            margin-bottom:60px;
+            font-weight:bold;
+
         }
 
-        .concept-card:hover {
-            transform: translateY(-10px);
-            border-color: #ff7300;
-            box-shadow: 0 0 25px rgba(255,115,0,.3);
+        /* TARJETAS */
+
+        .concept-card{
+
+            background:linear-gradient(145deg,#111,#1a1a1a);
+
+            border:1px solid #222;
+
+            border-radius:25px;
+
+            padding:35px;
+
+            height:100%;
+
+            transition:.4s;
+
+            position:relative;
+
+            overflow:hidden;
+
         }
 
-        .icon-box {
-            font-size: 40px;
-            color: #ff7300;
-            margin-bottom: 20px;
+        .concept-card::before{
+
+            content:"";
+
+            position:absolute;
+
+            width:100%;
+
+            height:5px;
+
+            background:#ff6a00;
+
+            top:0;
+
+            left:-100%;
+
+            transition:.4s;
+
         }
 
-        .concept-card h4 {
-            color: white;
-            margin-bottom: 15px;
-            font-weight: bold;
+        .concept-card:hover::before{
+            left:0;
         }
 
-        .concept-card p {
-            color: #c7c7c7;
-            line-height: 1.7;
+        .concept-card:hover{
+
+            transform:translateY(-10px);
+
+            border-color:#ff6a00;
+
+            box-shadow:0 0 25px rgba(255,106,0,.3);
+
         }
 
-        .footer {
-            border-top: 1px solid #222;
+        .concept-card i{
+
+            font-size:50px;
+
+            color:#ff6a00;
+
+            margin-bottom:20px;
+
+        }
+
+        .concept-card h4{
+
+            margin-bottom:20px;
+
+            font-weight:bold;
+
+        }
+
+        .concept-card p{
+
+            color:#c9c9c9;
+
+            line-height:1.9;
+
+        }
+
+        /* HABILIDADES */
+
+        .skills-box{
+
+            background:#111;
+
+            border:1px solid #222;
+
+            border-radius:25px;
+
+            padding:50px;
+
+        }
+
+        .progress{
+
+            height:25px;
+
+            background:#222;
+
+            margin-bottom:25px;
+
+            border-radius:20px;
+
+            overflow:hidden;
+
+        }
+
+        .progress-bar{
+
+            background:#ff6a00;
+
+            font-weight:bold;
+
+        }
+
+        /* FOOTER */
+
+        footer{
+
+            background:#050505;
+
+            border-top:1px solid #222;
+
+            color:#999;
+
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:2.8rem;
+            }
+
+            .section-title{
+                font-size:2rem;
+            }
+
         }
 
     </style>
@@ -129,12 +290,16 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 
         <div class="container">
 
             <a class="navbar-brand" href="index.html">
-                <i class="fa-solid fa-code"></i> PROGRAMACIÓN
+
+                <i class="fa-solid fa-code"></i>
+                PROGRAMACIÓN
+
             </a>
 
         </div>
@@ -142,6 +307,7 @@
     </nav>
 
     <!-- HERO -->
+
     <header class="hero">
 
         <div class="container">
@@ -152,201 +318,292 @@
 
             <p class="mt-4">
 
-                Una colección de temas importantes que he aprendido
-                durante mi proceso en el mundo del desarrollo y la programación.
+                Una colección de conceptos importantes
+                que he aprendido en el mundo de la programación,
+                el desarrollo web y la tecnología.
 
             </p>
+
+            <a href="#conceptos" class="btn-custom">
+                Explorar Conceptos
+            </a>
 
         </div>
 
     </header>
 
-    <!-- CONCEPTOS -->
-    <section class="container py-5">
+    <main>
 
-        <h2 class="section-title">
-            Temas Aprendidos
-        </h2>
+        <!-- CONCEPTOS -->
 
-        <div class="row g-4">
+        <section class="container py-5" id="conceptos">
 
-            <!-- FOR -->
-            <div class="col-md-6 col-lg-4">
+            <h2 class="section-title">
+                Conceptos Aprendidos
+            </h2>
 
-                <div class="concept-card">
+            <div class="row g-4">
 
-                    <div class="icon-box">
+                <!-- CICLO FOR -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="concept-card text-center">
+
                         <i class="fa-solid fa-rotate"></i>
+
+                        <h4>
+                            Ciclo For
+                        </h4>
+
+                        <p>
+
+                            El ciclo for es una estructura repetitiva utilizada
+                            en programación para ejecutar instrucciones
+                            varias veces automáticamente.
+
+                            Se utiliza cuando conocemos
+                            la cantidad de veces que queremos repetir
+                            una acción.
+
+                            Es muy útil para recorrer listas,
+                            mostrar números,
+                            realizar cálculos
+                            y automatizar procesos.
+
+                        </p>
+
                     </div>
-
-                    <h4>Ciclo For</h4>
-
-                    <p>
-                        El ciclo for permite repetir instrucciones automáticamente.
-                        Es muy útil para contar números, recorrer listas
-                        y automatizar procesos.
-                    </p>
 
                 </div>
 
-            </div>
+                <!-- FUNCIONES -->
 
-            <!-- FUNCIONES -->
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="concept-card">
+                    <div class="concept-card text-center">
 
-                    <div class="icon-box">
                         <i class="fa-solid fa-gears"></i>
+
+                        <h4>
+                            Funciones
+                        </h4>
+
+                        <p>
+
+                            Las funciones son bloques de código
+                            organizados que realizan tareas específicas.
+
+                            Ayudan a reutilizar instrucciones,
+                            mejorar el orden del programa
+                            y facilitar la lectura del código.
+
+                        </p>
+
                     </div>
-
-                    <h4>Funciones</h4>
-
-                    <p>
-                        Las funciones ayudan a organizar el código y reutilizar
-                        tareas específicas dentro de un programa.
-                    </p>
 
                 </div>
 
-            </div>
+                <!-- GIT -->
 
-            <!-- GIT -->
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="concept-card">
+                    <div class="concept-card text-center">
 
-                    <div class="icon-box">
                         <i class="fa-brands fa-git-alt"></i>
+
+                        <h4>
+                            Git
+                        </h4>
+
+                        <p>
+
+                            Git es un sistema de control de versiones
+                            que permite guardar cambios realizados
+                            en proyectos de programación.
+
+                            También ayuda a trabajar de forma organizada
+                            y recuperar versiones anteriores.
+
+                        </p>
+
                     </div>
-
-                    <h4>Git</h4>
-
-                    <p>
-                        Git es un sistema de control de versiones utilizado
-                        para guardar cambios y trabajar de forma organizada.
-                    </p>
 
                 </div>
 
-            </div>
+                <!-- GITHUB -->
 
-            <!-- GITHUB -->
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="concept-card">
+                    <div class="concept-card text-center">
 
-                    <div class="icon-box">
                         <i class="fa-brands fa-github"></i>
+
+                        <h4>
+                            GitHub
+                        </h4>
+
+                        <p>
+
+                            GitHub es una plataforma online
+                            utilizada para almacenar proyectos
+                            creados con Git.
+
+                            Permite compartir código,
+                            trabajar en equipo
+                            y publicar proyectos web.
+
+                        </p>
+
                     </div>
-
-                    <h4>GitHub</h4>
-
-                    <p>
-                        GitHub permite almacenar proyectos online,
-                        compartir código y colaborar con otros desarrolladores.
-                    </p>
 
                 </div>
 
-            </div>
+                <!-- LENGUAJES -->
 
-            <!-- LENGUAJES -->
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="concept-card">
+                    <div class="concept-card text-center">
 
-                    <div class="icon-box">
                         <i class="fa-solid fa-laptop-code"></i>
+
+                        <h4>
+                            Lenguajes de Programación
+                        </h4>
+
+                        <p>
+
+                            Los lenguajes de programación
+                            permiten crear aplicaciones,
+                            videojuegos,
+                            páginas web
+                            y programas informáticos.
+
+                            Algunos ejemplos son:
+                            HTML,
+                            CSS,
+                            JavaScript
+                            y Python.
+
+                        </p>
+
                     </div>
-
-                    <h4>Lenguajes</h4>
-
-                    <p>
-                        Los lenguajes de programación sirven para crear
-                        páginas web, videojuegos, aplicaciones y software.
-                    </p>
 
                 </div>
 
-            </div>
+                <!-- parseInt -->
 
-            <!-- parseInt -->
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="concept-card">
+                    <div class="concept-card text-center">
 
-                    <div class="icon-box">
-                        <i class="fa-solid fa-hashtag"></i>
-                    </div>
-
-                    <h4>parseInt()</h4>
-
-                    <p>
-                        Convierte texto o números decimales
-                        en números enteros.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <!-- parseFloat -->
-            <div class="col-md-6 col-lg-4">
-
-                <div class="concept-card">
-
-                    <div class="icon-box">
                         <i class="fa-solid fa-calculator"></i>
+
+                        <h4>
+                            parseInt()
+                        </h4>
+
+                        <p>
+
+                            La función parseInt()
+                            convierte un texto
+                            o número decimal
+                            en un número entero.
+
+                            Es muy útil para trabajar
+                            con datos numéricos
+                            ingresados por usuarios.
+
+                        </p>
+
                     </div>
-
-                    <h4>parseFloat()</h4>
-
-                    <p>
-                        Convierte texto en números decimales
-                        de manera sencilla.
-                    </p>
 
                 </div>
 
-            </div>
+                <!-- parseFloat -->
 
-            <!-- SWITCH -->
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="concept-card">
+                    <div class="concept-card text-center">
 
-                    <div class="icon-box">
+                        <i class="fa-solid fa-square-root-variable"></i>
+
+                        <h4>
+                            parseFloat()
+                        </h4>
+
+                        <p>
+
+                            parseFloat()
+                            permite convertir textos
+                            en números decimales.
+
+                            Se utiliza en cálculos matemáticos,
+                            operaciones con precios
+                            y datos que necesitan decimales.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- SWITCH -->
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="concept-card text-center">
+
                         <i class="fa-solid fa-code-branch"></i>
+
+                        <h4>
+                            Switch Case
+                        </h4>
+
+                        <p>
+
+                            Switch Case permite ejecutar
+                            diferentes acciones dependiendo
+                            del valor de una variable.
+
+                            Es una alternativa más organizada
+                            cuando existen muchas condiciones.
+
+                        </p>
+
                     </div>
-
-                    <h4>Switch Case</h4>
-
-                    <p>
-                        Permite ejecutar diferentes opciones
-                        dependiendo del valor de una variable.
-                    </p>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+        
 
     <!-- FOOTER -->
-    <footer class="footer text-center text-white-50 py-4">
+
+    <footer class="text-center py-4">
 
         <div class="container">
 
-            <p class="mb-0">
-                © SOBRINO 2026 | Diseño Moderno de Programación
-            </p>
+            © SOBRINO 2026 | Conceptos de Programación
 
         </div>
 
     </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        window.onload = function(){
+
+            console.log("Página cargada correctamente");
+
+        }
+
+    </script>
 
 </body>
 
